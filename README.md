@@ -11,6 +11,7 @@ AWS Account: In order to complete this workshop you'll need an AWS Account with 
 
 Essential JavaScript, HTML/CSS & Python knowledge: The front-end used JS and HTML/CSS and the backend code is written in Python; hence working knowledge is needed on these languages for this workshop.
 
+### Architecture
 <p align = "center"> <img src = "https://user-images.githubusercontent.com/23396903/73653526-56573b80-46af-11ea-93ed-5ff07526649e.png"> </img> </p>
 
 The workshop covers the following topics:
