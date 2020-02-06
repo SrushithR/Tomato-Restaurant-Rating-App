@@ -7,7 +7,7 @@ provider:
   memorySize: 256
   timeout: 30
   runtime: python3.7
-
+  iamRoleStatements: ${file(./Resources/LambdaRole.yml)}
 
 package:
   individually: true
