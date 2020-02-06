@@ -9,7 +9,7 @@ events:
       path: /ratings
       method: post
       cors: true
-      integraion: lambda
+      integration: lambda
       request:
         passThrough: WHEN_NO_MATCH
         template:

@@ -9,7 +9,7 @@ events:
       path: /leaderboard
       method: get
       cors: true
-      integraion: lambda
+      integration: lambda
       request:
         passThrough: WHEN_NO_MATCH
         template:
