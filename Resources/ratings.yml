@@ -13,8 +13,8 @@ events:
       request:
         passThrough: WHEN_NO_MATCH
         template:
-          application/json: ‘$input.json(“$”)’
-          application/x-www-form-urlencoded: ‘$input.json(“$”)’
-#      response:
-#        headers:
-#          Access-Control-Allow-Origin: “‘*’”
+          application/json: '$input.json("$")'
+          application/x-www-form-urlencoded: '$input.json("$")'
+      response:
+        headers:
+          Access-Control-Allow-Origin: "'*'"
