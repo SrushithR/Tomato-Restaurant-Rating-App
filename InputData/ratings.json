@@ -1,0 +1,15 @@
+{
+  "resource": "/restaurants",
+  "path": "/restaurants",
+  "httpMethod": "POST",
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  },
+  "body": {
+        "restaurant_name": "Ruchi restaurant",
+        "restaurant_id": "123",
+        "user_id": "98789",
+        "rating": 2
+    }
+}

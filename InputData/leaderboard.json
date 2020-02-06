@@ -1,0 +1,5 @@
+{
+    "resource": "/leaderboard",
+    "path": "/leaderboard",
+    "httpMethod": "GET"
+}

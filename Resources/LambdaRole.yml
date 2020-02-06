@@ -1,6 +1,5 @@
 - Effect: Allow
   Action:
-#     - dynamodb:*
     - dynamodb:Query
     - dynamodb:Scan
     - dynamodb:GetItem
@@ -10,9 +9,3 @@
   Resource:
     - { "Fn::GetAtt": ["RatingsTable", "Arn"] }
     - { "Fn::GetAtt": ["RestaurantsTable", "Arn"] }
-#- Effect: Allow
-#  Action:
-#    - logs:CreateLogStream
-#    - logs:CreateLogGroup
-#    - logs:PutLogEvents
-#  Resource : "*"

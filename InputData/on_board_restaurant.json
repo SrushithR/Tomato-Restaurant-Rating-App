@@ -1,0 +1,12 @@
+{
+  "resource": "/restaurants",
+  "path": "/restaurants",
+  "httpMethod": "POST",
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json"
+  },
+  "body": {
+        "restaurant_name": "McD"
+    }
+}
