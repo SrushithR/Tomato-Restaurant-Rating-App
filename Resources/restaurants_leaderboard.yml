@@ -1,0 +1,11 @@
+handler: restaurants_leaderboard.handler
+name: restaurants_leaderboard
+package:
+  include:
+    - restaurants_leaderboard.py
+    - decimal_encoder.py
+events:
+  - http:
+      path: /rating_app
+      method: get
+      cors: true

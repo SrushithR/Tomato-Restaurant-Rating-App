@@ -1,0 +1,11 @@
+handler: on_board_restaurant.handler
+name: on_board_restaurant
+package:
+  include:
+    - on_board_restaurant.py
+    - decimal_encoder.py
+events:
+  - http:
+      path: /rating_app
+      method: post
+      cors: true

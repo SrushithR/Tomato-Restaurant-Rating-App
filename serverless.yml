@@ -1,0 +1,54 @@
+service: restaurants-rating-app
+
+provider:
+  name: aws
+  stage: ${opt:stage}
+  region: ${opt:region}
+  memorySize: 256
+  timeout: 30
+  runtime: python3.7
+
+
+package:
+  individually: true
+  exclude:
+    - "./**"
+    - node_modules/**
+
+resources:
+  Resources:
+    cognito: ${file(./Resources/cognito.yml)}
+    RestaurantsTable:
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: restaurant_id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: restaurant_id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: RestaurantsTable
+    RatingsTable:
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: restaurant_id
+            AttributeType: S
+          - AttributeName: created_at
+            AttributeType: N
+        KeySchema:
+          - AttributeName: restaurant_id
+            KeyType: HASH
+          - AttributeName: created_at
+            KeyType: RANGE
+        BillingMode: PAY_PER_REQUEST
+        TableName: RatingsTable
+        
+functions:
+  load_restaurants: ${file(./Resources/load_restaurants.yml)}
+  on_board_restaurant: ${file(./Resources/on_board_restaurant.yml)}
+  ratings: ${file(./Resources/ratings.yml)}
+  restaurants_leaderboard: ${file(./Resources/restaurants_leaderboard.yml)}
+
+

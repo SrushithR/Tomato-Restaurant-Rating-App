@@ -1,0 +1,11 @@
+handler: load_restaurants.handler
+name: load_restaurants
+package:
+  include:
+    - load_restaurants.py
+    - decimal_encoder.py
+events:
+  - http:
+      path: /rating_app
+      method: get
+      cors: true

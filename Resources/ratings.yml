@@ -1,0 +1,11 @@
+handler: ratings.handler
+name: ratings
+package:
+  include:
+    - ratings.py
+    - decimal_encoder.py
+events:
+  - http:
+      path: /rating_app
+      method: post
+      cors: true
