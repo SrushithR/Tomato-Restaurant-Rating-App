@@ -6,6 +6,6 @@ package:
     - decimal_encoder.py
 events:
   - http:
-      path: /rating_app
+      path: /ratings
       method: post
       cors: true
