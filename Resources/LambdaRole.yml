@@ -11,12 +11,8 @@
     - dynamodb:UpdateItem
     - dynamodb:DeleteItem
   Resource:
-    - { "Fn::GetAtt": ["CustomersTableName", "Arn"] }
-    - Fn::Join:
-        - "/"
-        - - { "Fn::GetAtt": ["CustomersTableName", "Arn"] }
-          - "index/*"
-    - { "Fn::GetAtt": ["LocationsTableName", "Arn"] }
+    - { "Fn::GetAtt": ["RatingsTable", "Arn"] }
+    - { "Fn::GetAtt": ["RestaurantsTable", "Arn"] }
 - Effect: Allow
   Action:
     - logs:CreateLogStream
