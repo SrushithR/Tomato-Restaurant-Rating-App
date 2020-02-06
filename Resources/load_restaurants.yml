@@ -10,3 +10,11 @@ events:
       method: get
       cors: true
       integraion: lambda
+      request:
+        passThrough: WHEN_NO_MATCH
+        template:
+          application/json: ‘$input.json(“$”)’
+          application/x-www-form-urlencoded: ‘$input.json(“$”)’
+        response:
+          headers:
+            Access-Control-Allow-Origin: “‘*’”
