@@ -8,34 +8,47 @@ provider:
   timeout: 30
   runtime: python3.7
 
-plugins:
-  - serverless-python-requirements
-
-custom:
-  pythonRequirements:
-    slim: true
 
 package:
   individually: true
   exclude:
     - "./**"
     - node_modules/**
-    - requirements.txt
 
+resources:
+  Resources:
+    cognito: ${file(./Resources/cognito.yml)}
+    RestaurantsTable:
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: restaurant_id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: restaurant_id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: RestaurantsTable
+    RatingsTable:
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: restaurant_id
+            AttributeType: S
+          - AttributeName: created_at
+            AttributeType: N
+        KeySchema:
+          - AttributeName: restaurant_id
+            KeyType: HASH
+          - AttributeName: created_at
+            KeyType: RANGE
+        BillingMode: PAY_PER_REQUEST
+        TableName: RatingsTable
+        
+functions:
+  load_restaurants: ${file(./Resources/load_restaurants.yml)}
+  on_board_restaurant: ${file(./Resources/on_board_restaurant.yml)}
+  ratings: ${file(./Resources/ratings.yml)}
+  restaurants_leaderboard: ${file(./Resources/restaurants_leaderboard.yml)}
 
-resources: ${file(./Resources/cognito.yml)}
-resources: ${file(./Resources/dynamodb.yml)}
-function: ${file(./Resources/load_restaurants.yml)}
-function: ${file(./Resources/on_board_restaurant.yml)}
-function: ${file(./Resources/ratings.yml)}
-
-outputs:
-  load_restaurants: 
-    Value: ${self:custom.load_restaurants}
-  on_board_restaurant:
-    Value: ${self:custom.on_board_restaurant}
-  ratings: 
-    Value: ${self:custom.ratings}
-  RestaurantsTable: DynamoDbTable-${self:custom.stage}
-  RatingsTable: DynamoDbTable-${self:custom.stage}
 

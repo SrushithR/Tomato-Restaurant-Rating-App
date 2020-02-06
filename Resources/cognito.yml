@@ -1,13 +1,12 @@
-UserPool:
-  Type: "AWS::Cognito::UserPool"
-  Properties:
-    MfaConfiguration: OFF
-    UserPoolName:  test1
-    UsernameAttributes:
-      - email
-    Policies:
-      PasswordPolicy:
-        MinimumLength: 6
+Type: "AWS::Cognito::UserPool"
+Properties:
+  MfaConfiguration: OFF
+  UserPoolName: users
+  UsernameAttributes:
+    - email
+  Policies:
+    PasswordPolicy:
+      MinimumLength: 6
         # RequireLowercase: False
         # RequireNumbers: True
         # RequireSymbols: False

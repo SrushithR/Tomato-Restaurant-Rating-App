@@ -4,14 +4,8 @@ package:
   include:
     - restaurants_leaderboard.py
     - decimal_encoder.py
-  # exclude:
-  #   - requirements.txt
 events:
   - http:
       path: /rating_app
       method: get
-      authorizer:
-        type: COGNITO_USER_POOLS
-        authorizerId:
-          Ref: ApiGatewayAuthorizer
       cors: true
