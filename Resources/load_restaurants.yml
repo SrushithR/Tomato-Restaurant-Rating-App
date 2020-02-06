@@ -1,4 +1,4 @@
-handler: load_restaurants.handler
+handler: load_restaurants.lambda_handler
 name: load_restaurants
 package:
   include:
@@ -9,3 +9,4 @@ events:
       path: /restaurants
       method: get
       cors: true
+      integraion: lambda

@@ -1,4 +1,4 @@
-handler: on_board_restaurant.handler
+handler: on_board_restaurant.lambda_handler
 name: on_board_restaurant
 package:
   include:
@@ -9,3 +9,4 @@ events:
       path: /restaurants
       method: post
       cors: true
+      integraion: lambda

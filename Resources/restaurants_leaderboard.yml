@@ -1,4 +1,4 @@
-handler: restaurants_leaderboard.handler
+handler: restaurants_leaderboard.lambda_handler
 name: restaurants_leaderboard
 package:
   include:
@@ -9,3 +9,4 @@ events:
       path: /leaderboard
       method: get
       cors: true
+      integraion: lambda

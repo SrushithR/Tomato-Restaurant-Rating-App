@@ -1,4 +1,4 @@
-handler: ratings.handler
+handler: ratings.lambda_handler
 name: ratings
 package:
   include:
@@ -9,3 +9,4 @@ events:
       path: /ratings
       method: post
       cors: true
+      integraion: lambda
