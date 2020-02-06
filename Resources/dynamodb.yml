@@ -1,0 +1,26 @@
+RestaurantsTable:
+  Type: "AWS::DynamoDB::Table"
+  Properties:
+    AttributeDefinitions:
+      - AttributeName: restaurant_id
+        AttributeType: S
+    KeySchema:
+      - AttributeName: restaurant_id
+        KeyType: HASH
+    BillingMode: PAY_PER_REQUEST
+    TableName: RestaurantsTable
+RatingsTable:
+  Type: "AWS::DynamoDB::Table"
+  Properties:
+    AttributeDefinitions:
+      - AttributeName: restaurant_id
+        AttributeType: S
+      - AttributeName: created_at
+        AttributeType: S
+    KeySchema:
+      - AttributeName: restaurant_id
+        KeyType: HASH
+      - AttributeName: created_at
+        KeyType: RANGE
+    BillingMode: PAY_PER_REQUEST
+    TableName: RatingsTable

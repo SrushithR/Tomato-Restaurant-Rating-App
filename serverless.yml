@@ -1,0 +1,41 @@
+service: restaurants-rating-app
+
+provider:
+  name: aws
+  stage: ${opt:stage}
+  region: ${opt:region}
+  memorySize: 256
+  timeout: 30
+  runtime: python3.7
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    slim: true
+
+package:
+  individually: true
+  exclude:
+    - "./**"
+    - node_modules/**
+    - requirements.txt
+
+
+resources: ${file(./Resources/cognito.yml)}
+resources: ${file(./Resources/dynamodb.yml)}
+function: ${file(./Resources/load_restaurants.yml)}
+function: ${file(./Resources/on_board_restaurant.yml)}
+function: ${file(./Resources/ratings.yml)}
+
+outputs:
+  load_restaurants: 
+    Value: ${self:custom.load_restaurants}
+  on_board_restaurant:
+    Value: ${self:custom.on_board_restaurant}
+  ratings: 
+    Value: ${self:custom.ratings}
+  RestaurantsTable: DynamoDbTable-${self:custom.stage}
+  RatingsTable: DynamoDbTable-${self:custom.stage}
+
