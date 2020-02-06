@@ -2,8 +2,8 @@ service: restaurants-rating-app
 
 provider:
   name: aws
-  stage: ${opt:stage}
-  region: ${opt:region}
+  stage: dev
+  region: ap-southeast-2
   memorySize: 256
   timeout: 30
   runtime: python3.7

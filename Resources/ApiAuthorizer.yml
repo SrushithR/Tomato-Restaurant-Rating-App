@@ -3,8 +3,7 @@ ApiGatewayAuthorizer:
       Properties: 
         Name: CognitoUserPool
         Type: COGNITO_USER_POOLS
-        # IdentitySource: method.request.header.Authorization
-        RestApiId: 
+        RestApiId:
           Ref: ApiGatewayRestApi
         ProviderARNs: 
           - Fn::GetAtt:
