@@ -10,7 +10,7 @@ def lambda_handler(event, context):
         handler function called by AWS Lambda
     :return: list of restaurant ratings
     """
-    client = boto3.resource("dynamodb", region_name="us-west-2")
+    client = boto3.resource("dynamodb")
     ratings_table = client.Table("RestaurantsTable")
     response = ratings_table.scan(ProjectionExpression="restaurant_id,restaurant_name")
 

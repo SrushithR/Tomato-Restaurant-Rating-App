@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     :param event: input passed to the lambda function from the UI
     """
     print("input to the lambda function", event)
-    client = boto3.resource('dynamodb', region_name="us-west-2")
+    client = boto3.resource('dynamodb')
     table = client.Table("RestaurantsTable")
 
     response = table.put_item(Item={
