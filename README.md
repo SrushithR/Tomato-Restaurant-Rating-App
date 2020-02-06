@@ -1,4 +1,7 @@
 # Tomato-Restaurant-Rating-App
+
+![Deployment](https://github.com/SrushithR/Tomato-Restaurant-Rating-App/workflows/Deploy%20master%20branch/badge.svg)
+
 A restaurant rating app completely built on serverless using AWS!
 
 Application - Technical Description:
