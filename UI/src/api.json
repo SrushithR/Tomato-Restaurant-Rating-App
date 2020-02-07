@@ -1,0 +1,5 @@
+{
+  "allResturant": "https://0ka5q5ptd7.execute-api.ap-southeast-2.amazonaws.com/dev/restaurants",
+  "saveRating": "https://0ka5q5ptd7.execute-api.ap-southeast-2.amazonaws.com/dev/ratings",
+  "leaderBoard": "https://0ka5q5ptd7.execute-api.ap-southeast-2.amazonaws.com/dev/leaderboard"
+}
