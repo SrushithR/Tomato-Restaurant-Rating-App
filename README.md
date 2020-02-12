@@ -4,6 +4,8 @@
 
 A restaurant rating app completely built on serverless using AWS!
 
+Slide deck for the workshop - https://www.slideshare.net/SrushithR/serverless-workshop-tomato-restaurant-rating-app
+
 Application - Technical Description:
 The application will present users with an HTML & JS based user interface for rating restaurant. The interface on the backend with a RESTful web service will submit the request and update the database. The application will also provide facilities for users to register into the application before rating.
 
@@ -45,3 +47,15 @@ Hands-on: Create a new REST API, create a Cognito User Pools Authorizer, create 
 How to test the implementation
 How to monitor the application, logging, debugging, etc
 Wrap-up and key takeaways
+
+
+## Resources:
+1. Lambda performance tuning - https://github.com/alexcasalboni/aws-lambda-power-tuning
+2. Connecting Cognito with API Gateway - https://medium.com/@awskarthik82/part-1-securing-aws-api-gateway-using-aws-cognito-oauth2-scopes-410e7fb4a4c0
+3. The guy to follow for NoSQL DB design - https://twitter.com/houlihan_rick
+4. AWS Lambda under the hood: ReInvent talk - https://www.youtube.com/watch?v=xmacMfbrG28
+5. Optimizing your serverless applications - https://www.youtube.com/watch?v=5rMiq-jw1Ig
+6. Understanding DynamoDB on-demand pricing - https://serverless.com/blog/dynamodb-on-demand-serverless/
+7. Datadog blog post - https://www.datadoghq.com/state-of-serverless/
+8. Links to all of my other presentations - https://www.slideshare.net/SrushithR/
+ 
